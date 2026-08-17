@@ -1,4 +1,4 @@
-package com.github.ccduni.App;
+package com.github.ccduni;
 
 public class App {
     private static final String MESSAGE = "Hello World!";
