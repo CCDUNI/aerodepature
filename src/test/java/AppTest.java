@@ -1,6 +1,8 @@
-package com.github.ccduni;
+
 
 import org.junit.jupiter.api.Test;
+
+import App;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
