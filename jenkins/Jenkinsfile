@@ -3,7 +3,7 @@ pipeline{
     tools{
         maven 'Maven-3.9.16'
     }
-    
+
     stages{
 
         stage('Build & Compile'){
@@ -20,7 +20,7 @@ pipeline{
             }
             post {
                 always{
-                    junit 'build/reports/**/*.xml'
+                    junit '**/target/surefire-reports/*.xml'
                 }
             }
         }
