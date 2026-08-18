@@ -3,6 +3,7 @@ pipeline{
     tools{
         maven 'Maven-3.9.16'
     }
+    
     stages{
 
         stage('Build & Compile'){
@@ -17,25 +18,23 @@ pipeline{
                 echo "Running unit tests..."
                 sh 'mvn test'
             }
+            post {
+                always{
+                    junit 'build/reports/**/*.xml'
+                }
+            }
+        }
+        stage('Package Artifact'){
+            steps{
+                echo "Building the application..."
+                sh 'mvn package -DskipTests'
+            }
         }
 
-    }
-    post {
-        always{
-            junit 'build/reports/**/*.xml'
-        }
-    }
-
-    stage('Package Artifact'){
-        steps{
-            echo "Building the application..."
-            sh 'mvn package -DskipTests'
-        }
-    }
-
-    stage('Blackbox testing'){
-        steps{
-            echo "Running blackbox tests..."
+        stage('Blackbox testing'){
+            steps{
+                echo "Running blackbox tests..."
+            }
         }
     }
 }
