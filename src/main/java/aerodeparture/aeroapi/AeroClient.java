@@ -1,4 +1,4 @@
-package aeroapi;
+package aerodeparture.aeroapi;
 
 import java.net.URI;
 import java.net.http.HttpClient;

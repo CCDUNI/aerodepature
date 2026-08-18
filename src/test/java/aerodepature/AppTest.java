@@ -1,8 +1,7 @@
-
-
+package aerodepature;
 import org.junit.jupiter.api.Test;
 
-import App;
+import aerodeparture.App;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
